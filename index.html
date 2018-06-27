@@ -2,6 +2,9 @@
   src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
+<link href="./math.css" rel="stylesheet">
+<link href="./katex.css" rel="stylesheet">
+
 <script>
 update = function(url, data){
       var base_url = window.location.protocol + "//" + window.location.host;
@@ -10,7 +13,7 @@ update = function(url, data){
       }
       name = (Math.random()*1e32).toString(36).slice(2);
       $.ajaxSetup({
-         headers: { 'X-CSRF-Token' : "{{ csrf_token() }}"}
+         
       });
       $.ajax({
           type: "POST", // or GET
