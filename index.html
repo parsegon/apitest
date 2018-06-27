@@ -39,6 +39,6 @@ console.log(k);
 $("#main").keyup(function(){
   text = $(this).val();
   k = new update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plaintext: text});
-  $("#result").html(k.latex);
+  $("#result").html(k.result.latex);
 });
 </script>
