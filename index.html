@@ -34,11 +34,11 @@ k = update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plain
 console.log(k);
 </script>
 <textarea id="main"></textarea>
-<div id="result"></div>
+<div id="result" equation></div>
 <script>
 $("#main").keyup(function(){
   text = $(this).val();
-  k = update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plaintext: text});
-  console.log(k);
+  k = new update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plaintext: text});
+  $("#result").html(k.latex);
 });
 </script>
