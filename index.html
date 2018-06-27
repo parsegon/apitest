@@ -13,7 +13,7 @@ update = function(url, data){
       }
       name = (Math.random()*1e32).toString(36).slice(2);
       $.ajaxSetup({
-         
+
       });
       $.ajax({
           type: "POST", // or GET
@@ -32,4 +32,13 @@ update = function(url, data){
 
 k = update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plaintext: 'integral from 0 to 10 of 2x squared'});
 console.log(k);
+</script>
+<textarea id="main"></textarea>
+<div id="result"></div>
+<script>
+$("#main").keyup(function(){
+  text = $(this).val();
+  k = update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plaintext: text});
+  console.log(k);
+});
 </script>
