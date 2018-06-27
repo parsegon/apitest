@@ -1,3 +1,7 @@
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
 <script>
 update = function(url, data){
       var base_url = window.location.protocol + "//" + window.location.host;
@@ -23,6 +27,6 @@ update = function(url, data){
       this.result = window[name];
 }
 
-k = update(http://35.196.185.125/translate, {apikey: 'fJMtCoFefETRqEpo', plaintext: 'integral from 0 to 10 of 2x squared'});
+k = update('http://35.196.185.125/translate', {apikey: 'fJMtCoFefETRqEpo', plaintext: 'integral from 0 to 10 of 2x squared'});
 console.log(k);
 </script>
