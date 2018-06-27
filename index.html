@@ -1,0 +1,28 @@
+<script>
+update = function(url, data){
+      var base_url = window.location.protocol + "//" + window.location.host;
+      if(url.indexOf('http') == -1){
+        url = base_url + "/" + url;
+      }
+      name = (Math.random()*1e32).toString(36).slice(2);
+      $.ajaxSetup({
+         headers: { 'X-CSRF-Token' : "{{ csrf_token() }}"}
+      });
+      $.ajax({
+          type: "POST", // or GET
+          url: url,
+          async: false,
+          data: data,
+          success: function(data){
+           window[name] = data;
+          },
+          error : function(data){
+            window[name] = data;
+          }
+      });
+      this.result = window[name];
+}
+
+k = update(http://35.196.185.125/translate, {apikey: 'fJMtCoFefETRqEpo', plaintext: 'integral from 0 to 10 of 2x squared'});
+console.log(k);
+</script>
